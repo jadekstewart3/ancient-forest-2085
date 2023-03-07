@@ -2,8 +2,8 @@
   <div id="flight-<%=flight.id%>">
     <h2>Airline: <%= flight.airline.name %></h2>
     <p>Flight number: <%= flight.number %></p>
-   <p>Passengers:</p> <% flight.passengers.each do |passenger| %>
-      <p><%= passenger.name %></p>
-      <% end %>
-  <% end %>
+    <p>Passengers:</p> <% flight.passengers.each do |passenger| %>
+      <p><%= passenger.name %> <%= button_to "Remove #{passenger.name} from #{flight.number}", "/flights/#{flight.id}/passengers/#{passenger.id}", method: :delete %></p>
+    <% end %>
   </div>
+  <% end %>
